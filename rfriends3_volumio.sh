@@ -12,11 +12,14 @@
 # 1.7 2024/09/03 seekable
 # 1.8 2024/09/20 pulseaudio
 # 1.9 2024/10/29 add webdav
+# 2.0 2024/12/14 github
 # -----------------------------------------
-ver=1.9
+ver=2.0
 echo
 echo rfriends3 for volumio $ver
 echo
+SITE=https://github.com/rfriends/rfriends3/releases/latest/download
+SCRIPT=rfriends3_latest_script.zip
 # -----------------------------------------
 user=`whoami`
 dir=`pwd`
@@ -47,10 +50,10 @@ sudo apt -y install openssh-server
 echo
 echo install rfriends3
 echo
-rm /home/$user/rfriends3_latest_script.zip
-rm /home/$user/rfriends3_latest_script_dev.zip
-wget http://rfriends.s1009.xrea.com/files3/rfriends3_latest_script_dev.zip -O /home/$user/rfriends3_latest_script_dev.zip
-unzip -q -o -d /home/$user /home/$user/rfriends3_latest_script_dev.zip
+cd ~/
+rm -f $SCRIPT
+wget $SITE/$SCRIPT
+unzip -q -o $SCRIPT
 # -----------------------------------------
 #echo
 #echo configure samba
