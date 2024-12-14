@@ -1,0 +1,2 @@
+# for rfriends
+tmpfs /home/rfriendsuser/tmp tmpfs defaults,noatime,mode=0777 0 0
