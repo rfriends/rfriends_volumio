@@ -1,9 +1,9 @@
 rfriends_volumioはvolumio環境でrfriends3を動作させるスクリプトです  
   
 cd ~/  
-sudo apt -y install git  
-git clone https://github.com/rfriends/rfriends_volumio.git  
-cd rfriends_volumio  
+wget -O rfriends_volumio-main.zip https://github.com/rfriends/rfriends_volumio/archive/master.zip  
+unzip rfriends_volumio-main.zip  
+cd rfriends_volumio-main  
 sh rfriends3_volumio.sh  
   
 インストール方法は以下が参考になります。  
