@@ -11,6 +11,7 @@ sh rfriends3_volumio.sh
 E: Release file for http://raspbian.raspberrypi.org/raspbian/dists/buster/InRelease is not valid yet  
 手動で時刻合わせ  
 $ sudo date --set='2025/01/01 01:23:45'  
+その後、インストールを再実行してください。  
   
 インストール方法は以下が参考になります。  
   
