@@ -49,6 +49,21 @@ git clone https://github.com/rfriends/rfriends_ubuntu.git
 cd rfriends_ubuntu
 sh ubuntu_install.sh 2>&1 | tee ubuntu_install.log
 # -----------------------------------------
+cd $dir
+echo
+echo fstab
+echo
+cat /etc/fstab | grep "/home/$user/tmp"
+ret=$?
+
+if [ $ret = 1 ]; then
+    cp -p /etc/fstab $dir/fstab
+    sed -e ${userstr} $dir/fstab.skel >> $dir/fstab
+    sudo cp -p $dir/fstab /etc/fstab
+else
+    echo 'fstab already editted.'
+fi
+# -----------------------------------------
 echo
 echo configure samba for volumio
 echo
@@ -87,21 +102,7 @@ sed -e ${userstr} $dir/crontab.skel > $dir/crontab
 #
 echo webradio
 sudo cp -p $dir/my-web-radio /data/favourites/.
-# -----------------------------------------
-cd $dir
-echo
-echo fstab
-echo
-cat /etc/fstab | grep "/home/$user/tmp"
-ret=$?
 
-if [ $ret = 1 ]; then
-    cp -p /etc/fstab $dir/fstab
-    sed -e ${userstr} $dir/fstab.skel >> $dir/fstab
-    sudo cp -p $dir/fstab /etc/fstab
-else
-    echo 'fstab already editted.'
-fi
 # -----------------------------------------
 ip=`ip -4 -br a`
 echo
