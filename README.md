@@ -5,7 +5,7 @@ sudo apt install git
 rm -rf rfriends_volumio  
 git clone https://github.com/rfriends/rfriends_volumio.git  
 cd rfriends_volumio  
-sh rfriends3_volumio.sh  
+sh rfriends_volumio.sh  
 
 インストール中に以下のメッセージが出たら時刻が正しくありません。  
 E: Release file for http://raspbian.raspberrypi.org/raspbian/dists/buster/InRelease is not valid yet  
