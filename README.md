@@ -13,7 +13,6 @@ E: Release file for http://raspbian.raspberrypi.org/raspbian/dists/buster/InRele
 $ sudo date --set='2025/01/01 01:23:45'  
 その後、インストールを再実行してください。  
   
-インストール方法は以下が参考になります。  
+インストール方法は以下を参照してください。  
   
-ミュージックプレーヤーVolumio上にrfriendsをインストールする。  
-https://rfriends.hatenablog.com/entry/2024/08/25/194850  
+[ミュージックプレーヤーVolumio上にrfriendsをインストールする。](https://github.com/rfriends/rfriends_volumio/wiki)
