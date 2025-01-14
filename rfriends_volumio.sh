@@ -46,6 +46,11 @@ export optsamba
 cd $homedir
 rm -rf rfriends_ubuntu
 git clone https://github.com/rfriends/rfriends_ubuntu.git
+if [ $? != 0 ]; then
+  echo クローンに失敗しました。
+  echo 少し時間をおいて再度実行してください。
+  exit 1
+fi
 cd rfriends_ubuntu
 sh ubuntu_install.sh 2>&1 | tee ubuntu_install.log
 # -----------------------------------------
