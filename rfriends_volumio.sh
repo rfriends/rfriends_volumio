@@ -20,39 +20,24 @@ echo
 echo rfriends3 for volumio $ver
 echo
 # -----------------------------------------
-user=`whoami`
-dir=`pwd`
-userstr="s/rfriendsuser/${user}/g"
 dir=$(cd $(dirname $0);pwd)
-user=`whoami`
-if [ -z $HOME ]; then
-  homedir=`sh -c 'cd && pwd'`
-else
-  homedir=$HOME
-fi
 # -----------------------------------------
-echo
-echo rfriends3,lighttpdのインストール
-echo
-#
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install git
 
-optlighttpd="on"
-optsamba="off"
-export optlighttpd
-export optsamba
-#
-cd $homedir
-rm -rf rfriends_ubuntu
-git clone https://github.com/rfriends/rfriends_ubuntu.git
+cd ~/
+rm -rf rfriends3_core
+git clone https://github.com/rfriends/rfriends3_core.git
 if [ $? != 0 ]; then
   echo クローンに失敗しました。
   echo 少し時間をおいて再度実行してください。
   exit 1
 fi
-cd rfriends_ubuntu
-sh ubuntu_install.sh 2>&1 | tee ubuntu_install.log
+cd rfriends3_core
+
+export distro="ubuntu"
+export optlighttpd="on"
+
+sh common.sh 2>&1 | tee common.log
 # -----------------------------------------
 cd $dir
 echo
