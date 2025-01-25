@@ -21,6 +21,8 @@ echo rfriends3 for volumio $ver
 echo
 # -----------------------------------------
 dir=$(cd $(dirname $0);pwd)
+user=`whoami`
+userstr="s/rfriendsuser/${user}/g"
 # -----------------------------------------
 sudo apt-get update && sudo apt-get upgrade -y
 
@@ -74,14 +76,14 @@ echo configure usrdir
 echo
 cd $dir
 mkdir -p /data/INTERNAL/usr2/
-mkdir -p $homedir/tmp/
-sudo chown $user $homedir/tmp/
-sudo chgrp $user $homedir/tmp/
-sudo chmod 777   $homedir/tmp/
+mkdir -p /home/$user/tmp/
+sudo chown $user /home/$user/tmp/
+sudo chgrp $user /home/$user/tmp/
+sudo chmod 777   /home/$user/tmp/
 
-cat <<EOF > $homedir/rfriends3/config/usrdir.ini
+cat <<EOF > /home/$user/rfriends3/config/usrdir.ini
 usrdir = "/data/INTERNAL/usr2/"
-tmpdir = "$homedir/tmp/"
+tmpdir = "/home/$user/tmp/"
 EOF
 # -----------------------------------------
 echo
