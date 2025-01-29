@@ -14,5 +14,5 @@ $ sudo date --set='2025/01/01 01:23:45'
 その後、インストールを再実行してください。  
   
 インストール方法は以下を参照してください。  
+https://github.com/rfriends/rfriends/blob/gh-pages/distro/volumio.md
   
-[ミュージックプレーヤーVolumio上にrfriendsをインストールする。](https://github.com/rfriends/rfriends_volumio/wiki)
