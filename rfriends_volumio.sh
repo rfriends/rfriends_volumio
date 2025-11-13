@@ -76,6 +76,7 @@ echo configure usrdir
 echo
 cd $dir
 mkdir -p /data/INTERNAL/usr2/
+sudo chmod 777 /data/INTERNAL/usr2/
 mkdir -p /home/$user/tmp/
 sudo chown $user /home/$user/tmp/
 sudo chgrp $user /home/$user/tmp/
