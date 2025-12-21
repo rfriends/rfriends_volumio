@@ -14,8 +14,9 @@
 # 1.9 2024/10/29 add webdav
 # 2.0 2024/12/14 github
 # 2.1 2025/01/03 fix
+# 2.2 2025/12/21 locale
 # -----------------------------------------
-ver=2.1
+ver=2.2
 echo
 echo rfriends3 for volumio $ver
 echo
@@ -25,7 +26,9 @@ user=`whoami`
 userstr="s/rfriendsuser/${user}/g"
 # -----------------------------------------
 sudo apt-get update && sudo apt-get upgrade -y
-
+# -----------------------------------------
+sudo localectl set-locale en_US.UTF-8
+# -----------------------------------------
 cd ~/
 rm -rf rfriends3_core
 git clone https://github.com/rfriends/rfriends3_core.git
