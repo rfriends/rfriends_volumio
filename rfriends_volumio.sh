@@ -15,8 +15,9 @@
 # 2.0 2024/12/14 github
 # 2.1 2025/01/03 fix
 # 2.2 2025/12/21 locale
+# 2.3 2026/08/15 remove apt upgrade 
 # -----------------------------------------
-ver=2.2
+ver=2.3
 echo
 echo rfriends3 for volumio $ver
 echo
@@ -25,7 +26,8 @@ dir=$(cd $(dirname $0);pwd)
 user=`whoami`
 userstr="s/rfriendsuser/${user}/g"
 # -----------------------------------------
-sudo apt-get update && sudo apt-get upgrade -y
+#sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update
 # -----------------------------------------
 sudo localectl set-locale en_US.UTF-8
 # -----------------------------------------
